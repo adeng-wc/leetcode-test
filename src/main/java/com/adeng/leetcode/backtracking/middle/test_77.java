@@ -7,6 +7,10 @@ import java.util.List;
  * 77. 组合（不强调元素顺序）
  * <p>
  * https://leetcode.cn/problems/combinations/description/
+ *
+ * 思路：
+ * 1. 回溯算法，穷举
+ * 2. 增加剪枝逻辑
  */
 public class test_77 {
 

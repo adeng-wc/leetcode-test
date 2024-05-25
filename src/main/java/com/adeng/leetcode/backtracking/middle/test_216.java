@@ -37,7 +37,7 @@ public class test_216 {
 
             backTracking(k, n, i + 1);
 
-            path.removeLast();
+            path.remove(path.size() - 1);
             sum -= i;
         }
     }

@@ -15,7 +15,7 @@ import java.util.List;
 public class test_77 {
 
     List<List<Integer>> result = new ArrayList<>();
-    List<Integer> subList = new ArrayList<>();
+    List<Integer> pathList = new ArrayList<>();
 
     public List<List<Integer>> combine(int n, int k) {
         backTracking(1, n, k);
@@ -24,17 +24,18 @@ public class test_77 {
 
     private void backTracking(int startIndex, int n, int k) {
         // 退出条件
-        if (subList.size() == k) {
-            result.add(new ArrayList<>(subList));
+        if (pathList.size() == k) {
+            result.add(new ArrayList<>(pathList));
             return;
         }
 
         // 可以剪枝的地方就在递归中每一层for循环所选择的起始位置
         // 当剩余个数，不足 (k-subList.size()) 的时候，就可以停止遍历
-        for (int i = startIndex; i <= n-(k-subList.size())+1; i++) {
-            subList.add(i);
+        for (int i = startIndex; i <= n-(k- pathList.size())+1; i++) {
+            pathList.add(i);
+            // i + 1 和 i 的区别
             backTracking(i + 1, n, k);
-            subList.removeLast();
+            pathList.remove(pathList.size() - 1);
         }
     }
 

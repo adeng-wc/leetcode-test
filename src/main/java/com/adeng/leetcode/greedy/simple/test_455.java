@@ -1,7 +1,6 @@
 package com.adeng.leetcode.greedy.simple;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * 455. 分发饼干
